@@ -16,5 +16,11 @@ namespace BowlingScore.Controllers
             return View();
         }
 
+        public ActionResult RegistraChuza()
+        {
+            ViewBag.Score = "X-";
+            return View("Index");
+        }
+
     }
 }

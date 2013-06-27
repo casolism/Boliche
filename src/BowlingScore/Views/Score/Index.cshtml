@@ -6,6 +6,8 @@
 <span>Juego Iniciado</span>
 
 <fieldset>
+<span>Turno: Jugador 1</span><br />
+<span>Oportunidad: 1</span>
 <table id="Score" border="1" cellpadding="2" width="400">
 <thead>
 <tr>
@@ -26,7 +28,8 @@
 <tbody>
 <tr>
 <td>Jugador 1</td>
-<td> - </td>
+<td>@if (ViewBag.Score != null)
+    {@ViewBag.Score}</td>
 <td> - </td>
 <td> - </td>
 <td> - </td>
@@ -82,4 +85,9 @@
 </tr>
 </tbody>
 </table>
+@using (Html.BeginForm("RegistraTiro","Score")) {
+    <span>Pinos tirados: @Html.TextBox("txtPinos");</span>
+    <input type="submit" id="btnOk" value="Ok" />
+    @Html.ActionLink("Chuza", "RegistraChuza", "Score", null, new {@id="btnChuza"});
+}
 </fieldset>

@@ -29,11 +29,7 @@ namespace ImproveIT.Feature
                     //ScenarioContext.Current["browser"] = new FirefoxDriver();
 
                     //Select Chrome browser
-<<<<<<< HEAD
                     ScenarioContext.Current["browser"] = new ChromeDriver(@"D:\Disco E\CURSOS\2013\sdc ImproveIT\CodeBraker\CodeBraker\packages\WebDriver.ChromeDriver.26.0.1383.1\tools");
-=======
-                    ScenarioContext.Current["browser"] = new ChromeDriver(@"C:\sdc\src\Boliche\src\packages\WebDriver.ChromeDriver.26.0.1383.1\tools");
->>>>>>> e15ae1d14291d1eaff5f75ee7d6c3181279fe398
                 }
                 return (IWebDriver)ScenarioContext.Current["browser"];
             }
@@ -44,11 +40,7 @@ namespace ImproveIT.Feature
         {
             if (ScenarioContext.Current.ContainsKey("browser"))
             {
-<<<<<<< HEAD
                 Current.Dispose();
-=======
-                //Current.Dispose();
->>>>>>> e15ae1d14291d1eaff5f75ee7d6c3181279fe398
             }
 
         }

@@ -58,6 +58,31 @@ namespace BowlingScore.Features
             }
         }
 
+        [Then(@"El jugador (.*) realiza su tirada (.*) del primer turno")]
+        public void ThenElJugadorRealizaSuTiradaDelPrimerTurno(int p0, int p1)
+        {
+            Assert.IsTrue(WebBrowser.Current.PageSource.Contains("Turno: Jugador " + p0.ToString()));
+            Assert.IsTrue(WebBrowser.Current.PageSource.Contains("Oportunidad: " + p1.ToString()));
+        }
+
+        [Then(@"Chavita pulsó el botón chuza")]
+        public void ThenChavitaPulsoElBotonChuza()
+        {
+            IWebElement query = WebBrowser.Current.FindElement(By.Id("btnChuza"));
+            query.Click();
+        }
+
+        [When(@"Chavita Registra (.*) pines")]
+        public void WhenChavitaRegistraPines(int p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"Chavita pulsó el botón Ok")]
+        public void WhenChavitaPulsoElBotonOk()
+        {
+            ScenarioContext.Current.Pending();
+        }
 
     }
 }

@@ -33,7 +33,7 @@ namespace BowlingScore.Features
         [Then(@"Veo la tabla ""(.*)"":")]
         public void ThenVeoLaTabla(string p0, Table table)
         {
-            IWebElement tableFounded = WebBrowser.Current.FindElement(By.Id("Score"));
+            IWebElement tableFounded = WebBrowser.Current.FindElement(By.Id("tblScore"));
             IWebElement tableBodyFounded = tableFounded.FindElement(By.TagName("tbody"));
             var tableRowsFounded = tableBodyFounded.FindElements(By.TagName("tr"));
             Assert.AreEqual(tableRowsFounded.Count, table.Rows.Count, "Diferent quantity of rows in tables");

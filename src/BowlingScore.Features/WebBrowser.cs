@@ -29,7 +29,7 @@ namespace ImproveIT.Feature
                     //ScenarioContext.Current["browser"] = new FirefoxDriver();
 
                     //Select Chrome browser
-                    ScenarioContext.Current["browser"] = new ChromeDriver(@"C:\sdc2\bowling\Boliche\src\packages\WebDriver.ChromeDriver.26.0.1383.1\tools");
+                    ScenarioContext.Current["browser"] = new ChromeDriver(@"D:\Desarrollo\BolicheT\Boliche\src\packages\WebDriver.ChromeDriver.26.0.1383.1\tools");
                 }
                 return (IWebDriver)ScenarioContext.Current["browser"];
             }

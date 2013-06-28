@@ -1,4 +1,5 @@
-﻿@{
+﻿@model BowlingScore.Models.BowlingModel
+@{
     ViewBag.Title = "Index";
 }
 
@@ -7,39 +8,31 @@
 
 <fieldset>
 <span>Turno: Jugador 1</span><br />
-<span>Oportunidad: 1</span>
-<table id="Score" border="1" cellpadding="2" width="400">
+<span>Frame: @Model.Turno</span><br /><span>Oportunidad: @Model.Oportunidad</span>
+<table id="tblScore" border="1" cellpadding="2" width="400">
 <thead>
 <tr>
 <th>Jugador</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-<th>10</th>
+@for (int i = 1; i <= 10; i++)
+{
+    if (Model.Turno==i){
+        @Html.Raw("<th bgcolor='red'>" + @i + "</th>");
+    }
+    else{
+        @Html.Raw("<th>" + @i + "</th>");
+    }
+
+}
 <th>score</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Jugador 1</td>
-<td>@if (ViewBag.Score != null)
-    {@ViewBag.Score}</td>
-<td> @ViewBag.Score1- </td>
-<td> - </td>
-<td> - </td>
-<td> - </td>
-<td> - </td>
-<td> - </td>
-<td> - </td>
-<td> - </td>
-<td> - </td>
-<td>0</td>
+@for (int i = 1; i <= 10; i++)
+{
+    <td>@Model.Score[0, i]</td>}
+<td>@Model.Score[0, 12]</td>
 </tr>
 <tr>
 <td>Jugador 2</td>
@@ -85,7 +78,8 @@
 </tr>
 </tbody>
 </table>
-@using (Html.BeginForm("RegistraTiro","Score")) {
+@using (Html.BeginForm("RegistraTiro", "Score"))
+{
     <span>Pinos tirados: @Html.TextBox("txtPinos")</span>    
     <input type="submit" id="btnOk" value="Ok" />       
     

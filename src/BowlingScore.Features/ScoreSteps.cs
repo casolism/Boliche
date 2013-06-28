@@ -73,15 +73,18 @@ namespace BowlingScore.Features
         }
 
         [When(@"Chavita Registra (.*) pines")]
-        public void WhenChavitaRegistraPines(int p0)
+        public void WhenChavitaRegistraPines(int scoreNumber)
         {
-            ScenarioContext.Current.Pending();
+            //ScenarioContext.Current.Pending();
+            IWebElement textbox = WebBrowser.Current.FindElement(By.Id("txtPinos"));
+            textbox.SendKeys(scoreNumber.ToString());            
         }
 
         [When(@"Chavita pulsó el botón Ok")]
         public void WhenChavitaPulsoElBotonOk()
         {
-            ScenarioContext.Current.Pending();
+            IWebElement OkButton = WebBrowser.Current.FindElement(By.Id("btnOk"));
+            OkButton.Click();
         }
 
     }

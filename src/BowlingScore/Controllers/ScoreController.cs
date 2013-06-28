@@ -20,6 +20,15 @@ namespace BowlingScore.Controllers
         {
             ViewBag.Score = "X-";
             return View("Index");
+            
+        }
+
+        public ActionResult RegistraTiro()
+        {
+            ViewBag.Score = "X-";
+            string scoreNumber = Request.Form["txtPinos"];
+            ViewBag.Score1 = scoreNumber;
+            return View("Index");            
         }
 
     }

@@ -34,3 +34,11 @@ Scenario: Score para el Jugador 1
 	|Jugador 2	| -	| -	| -	| -	| -	| -	| -	| -	| -	| -	|0	|
 	|Jugador 3	| -	| -	| -	| -	| -	| -	| -	| -	| -	| -	|0	|
 	|Jugador 4	| -	| -	| -	| -	| -	| -	| -	| -	| -	| -	|0	|
+	#When Chavita Registra 3 pines
+	#And Chavita pulsó el botón Ok
+	#Then Veo la tabla "Score":
+	#|Jugador	|1	|2	|3	|4	|5	|6	|7	|8	|9	|10	|score	|
+	#|Jugador 1	|X-	|5-| -	| -	| -	| -	| -	| -	| -	| -	|0	|
+	#|Jugador 2	| -	| -	| -	| -	| -	| -	| -	| -	| -	| -	|0	|
+	#|Jugador 3	| -	| -	| -	| -	| -	| -	| -	| -	| -	| -	|0	|
+	#|Jugador 4	| -	| -	| -	| -	| -	| -	| -	| -	| -	| -	|0	|
